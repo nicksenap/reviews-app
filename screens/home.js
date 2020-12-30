@@ -4,6 +4,8 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
 import { MaterialIcons } from "@expo/vector-icons";
+import ReviewForm from "./reviewForm";
+
 
 export default function Home({ navigation }) {
 
@@ -15,12 +17,20 @@ export default function Home({ navigation }) {
 
   const [ModalShow, setModalShow] = useState(false);
 
+  const addReview = (review) => {
+    review.key = Math.random().toString();
+    setReviews((currentReviews) => {
+      return [review, ...currentReviews];
+    });
+    setModalShow(false);
+  };
+
   return (
     <View style={globalStyles.container}>
       <Modal visible={ModalShow} animationType='slide'>
         <View style={globalStyles.modalContent}>
           <MaterialIcons name='close' size={24} style={{...globalStyles.modalToggle, ...globalStyles.modalClose }} onPress={() => setModalShow(false)}/>
-          <Text>Hello from the model :)</Text>
+          <ReviewForm addReview={addReview}/>
         </View>
       </Modal>
       <MaterialIcons name='add' size={24} style={globalStyles.modalToggle} onPress={() => {setModalShow(true)}}></MaterialIcons>
