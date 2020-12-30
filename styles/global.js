@@ -16,7 +16,7 @@ export const globalStyles = StyleSheet.create({
       },
       modalContent:{
         flex:1,
-        paddingTop:100
+        marginTop: 100
       },
       modalToggle: {
         marginBottom:10,
@@ -28,7 +28,14 @@ export const globalStyles = StyleSheet.create({
       },
       modalClose:{
 
-      }
+      },
+      input: {
+        borderWidth: 1,
+        borderColor: '#ddd',
+        padding: 10,
+        fontSize: 18,
+        borderRadius: 6,
+      },
 });
 
 export const images = {
