@@ -33,9 +33,16 @@ export const globalStyles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ddd',
         padding: 10,
+        // marginVertical: 10,
         fontSize: 18,
         borderRadius: 6,
       },
+      error: {
+        color: 'red',
+        fontWeight:'bold',
+        marginVertical:6,
+        textAlign:'center'
+      }
 });
 
 export const images = {
